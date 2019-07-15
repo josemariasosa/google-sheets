@@ -4,18 +4,16 @@ This repository could eventually help you to: download, modify and upload data f
 
 ## Resources
 
-The **basic code** for this example is located in [main.py](https://github.com/josemariasosa/google-sheets/blob/master/main.py).
-
-A **simple Python Class** to retrieve and upload Google Sheets, is located in [connectGoogleSheet.py](https://github.com/josemariasosa/google-sheets/blob/master/connectGoogleSheet.py).
+The **basic code** for this example is located in [main.py](https://github.com/josemariasosa/google-sheets/blob/master/main.py). Also, the **simple Python Class** to retrieve and upload Google Sheets, refered in this repository, is located in [connectGoogleSheet.py](https://github.com/josemariasosa/google-sheets/blob/master/connectGoogleSheet.py).
 
 As an example, we are going to use the following spread sheet from Google Drive: https://docs.google.com/spreadsheets/d/19v5Zlc9FrHV5avziwdAsSBlki_m-xnwohgnwZAJLkoQ/edit?usp=sharing.
 
-In the **Exercises Section** some exercises could be found and this is a list of the resources used for them:
+In the **Exercises Section** some exercises could be found. This is a list of the exercises and the required resources for them:
 
 1. "Forecasting orders and sales for september" resources are:
 
-	- Code: [exercise1.py](https://github.com/josemariasosa/google-sheets/blob/master/exercise1.py)
-	- Files: [files/sales.csv](https://github.com/josemariasosa/google-sheets/blob/master/files/sales.csv)
+	- **Code**: [exercise1.py](https://github.com/josemariasosa/google-sheets/blob/master/exercise1.py)
+	- **Files**: [files/sales.csv](https://github.com/josemariasosa/google-sheets/blob/master/files/sales.csv)
 
 ## Steps to connect with Google Drive and Sheets.
 
