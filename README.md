@@ -4,9 +4,18 @@ This repository could eventually help you to: download, modify and upload data f
 
 ## Resources
 
-The basic code for this example is located in [main.py]()
+The **basic code** for this example is located in [main.py](https://github.com/josemariasosa/google-sheets/blob/master/main.py).
+
+A **simple Python Class** to retrieve and upload Google Sheets, is located in [connectGoogleSheet.py](https://github.com/josemariasosa/google-sheets/blob/master/connectGoogleSheet.py).
 
 As an example, we are going to use the following spread sheet from Google Drive: https://docs.google.com/spreadsheets/d/19v5Zlc9FrHV5avziwdAsSBlki_m-xnwohgnwZAJLkoQ/edit?usp=sharing.
+
+In the **Exercises Section** some exercises could be found and this is a list of the resources used for them:
+
+1. "Forecasting orders and sales for september" resources are:
+
+	- Code: [exercise1.py](https://github.com/josemariasosa/google-sheets/blob/master/exercise1.py)
+	- Files: [files/sales.csv](https://github.com/josemariasosa/google-sheets/blob/master/files/sales.csv)
 
 ## Steps to connect with Google Drive and Sheets.
 
@@ -108,7 +117,7 @@ sheet.update_cell(2,2, "Changed!")
 
 ### 4. Declaring a class in Python to modify large tables.
 
-In the file, called `connectGoogleSheet.py`, we can find a class named **ConnectGoogleSheet** with 2 main methods:
+In the file, called [connectGoogleSheet.py](https://github.com/josemariasosa/google-sheets/blob/master/connectGoogleSheet.py), we can find a class named **ConnectGoogleSheet** with 2 main methods:
 
 1. **getAllTable**() - Import as a Pandas object all the data in the table from the spread sheet.
 2. **updateAllTable**(new_table) - Upload all the new table to the spread sheet.
