@@ -12,8 +12,10 @@ In the **Exercises Section** some exercises could be found. This is a list of th
 
 1. **Exercise 1**. "Forecasting orders and sales for september" resources are:
 
-	- **Code**: [exercise1.py](https://github.com/josemariasosa/google-sheets/blob/master/exercise1.py)
+	- **Code**: [exercise1.py](https://github.com/josemariasosa/google-sheets/blob/master/exercises/exercise1.py)
+	- **Solution**: Get this [exercise solution](https://github.com/josemariasosa/google-sheets/blob/master/exercises/exerc1_solution.py)
 	- **Files**: [files/sales.csv](https://github.com/josemariasosa/google-sheets/blob/master/files/sales.csv)
+	- **Google Sheet**: [sales](https://docs.google.com/spreadsheets/d/1bojVmjyO-mbQDIIIgsorUXweCrcfA-QPYQiOXRjd6ts/edit?usp=sharing)
 
 ## II. Steps to connect with Google Drive and Sheets.
 
@@ -139,5 +141,4 @@ The result must be automatically uploaded to Google Drive, and it should look li
 | 2019-07 | $ 500,000 |      48      |
 | 2019-08 | $ 430,000 |      37      |
 | 2019-09 | $ 450,000 |      42      |
-
 
