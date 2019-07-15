@@ -2,7 +2,7 @@
 
 This repository could eventually help you to: download, modify and upload data from/to a Google Spread Sheet using the gspread library in Python.
 
-## Resources
+## I. Resources
 
 The **basic code** for this example is located in [main.py](https://github.com/josemariasosa/google-sheets/blob/master/main.py). Also, the **simple Python Class** to retrieve and upload Google Sheets, refered in this repository, is located in [connectGoogleSheet.py](https://github.com/josemariasosa/google-sheets/blob/master/connectGoogleSheet.py).
 
@@ -10,12 +10,12 @@ As an example, we are going to use the following spread sheet from Google Drive:
 
 In the **Exercises Section** some exercises could be found. This is a list of the exercises and the required resources for them:
 
-1. "Forecasting orders and sales for september" resources are:
+1. **Exercise 1**. "Forecasting orders and sales for september" resources are:
 
 	- **Code**: [exercise1.py](https://github.com/josemariasosa/google-sheets/blob/master/exercise1.py)
 	- **Files**: [files/sales.csv](https://github.com/josemariasosa/google-sheets/blob/master/files/sales.csv)
 
-## Steps to connect with Google Drive and Sheets.
+## II. Steps to connect with Google Drive and Sheets.
 
 ### 1. Generate credentials.
 
@@ -77,7 +77,6 @@ sheet = client.open("google-sheet-test").sheet1
 # sheet = client.open("google-sheet-test").worksheet(sheet_name)
 
 data = sheet.get_all_records()
-
 data = pd.DataFrame(data)
 
 print(data)
@@ -89,9 +88,7 @@ Instead of the attribute `sheet1` you can also use `worksheet` and give the name
 
 ```python
 row = sheet.row_values(3)
-
 col = sheet.col_values(3)
-
 cell = sheet.cell(1,2).value
 
 print(row)
@@ -121,4 +118,26 @@ In the file, called [connectGoogleSheet.py](https://github.com/josemariasosa/goo
 2. **updateAllTable**(new_table) - Upload all the new table to the spread sheet.
 
 **Warning!** The **updateAllTable** method will delete all current data in the spread sheet and overwrite all the new information, so it must be used with care.
+
+## III. Exercises Section
+
+### Exercise 1. "Forecasting orders and sales for september"
+
+From the [sales file](https://github.com/josemariasosa/google-sheets/blob/master/files/sales.csv), calculate the **sales** and **total orders** of september using the average of the actual sales and orders of the last 3 months (June, July and August).
+
+The result must be automatically uploaded to Google Drive, and it should look like this:
+
+|   Date  |   Sales   | Total_orders |
+|:-------:|:---------:|:------------:|
+| 2018-12 | $ 300,000 |      30      |
+| 2019-01 | $ 330,000 |      35      |
+| 2019-02 | $ 380,000 |      32      |
+| 2019-03 | $ 470,000 |      39      |
+| 2019-04 | $ 390,000 |      42      |
+| 2019-05 | $ 290,000 |      39      |
+| 2019-06 | $ 420,000 |      41      |
+| 2019-07 | $ 500,000 |      48      |
+| 2019-08 | $ 430,000 |      37      |
+| 2019-09 | $ 450,000 |      42      |
+
 
