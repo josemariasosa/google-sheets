@@ -125,7 +125,13 @@ In the file, called [connectGoogleSheet.py](https://github.com/josemariasosa/goo
 
 ### Exercise 1. "Forecasting orders and sales for september"
 
-From the [sales file](https://github.com/josemariasosa/google-sheets/blob/master/files/sales.csv), calculate the **sales** and **total orders** of september using the average of the actual sales and orders of the last 3 months (June, July and August).
+From the [csv-file of Sales](https://github.com/josemariasosa/google-sheets/blob/master/files/sales.csv), solve the following points:
+
+1. Print the Total_Orders.
+2. Print the sales and orders only of May 2019.
+3. Print the table of sales as a Pandas DataFrame.
+4. Calculate the **Forecast for September** using the average of the last 3 month (June, July and August).
+5. Calculate the **Average Ticket Price**.
 
 The result must be automatically uploaded to Google Drive, and it should look like this:
 
