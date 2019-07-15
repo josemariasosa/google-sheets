@@ -31,7 +31,7 @@ As an example, we are going to use the following spread sheet from Google Drive:
 
 1. Using the terminal, create a new virtual env. And install the following libraries `gspread`, `oauth2client` and `pandas`: 
 
-```
+```bash
 $ virtualenv -p python3 venv
 
 $ source venv/bin/activate
@@ -41,14 +41,14 @@ $ pip install gspread oauth2client pandas
 
 2. Create a new python file, we named it `sheets.py`. And import the libraries.
 
-```
+```python
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 ```
 
 3. Create, inside the python file, a list called **scope** using the following values. And set up the credentials using the json file. Lastly, generate a client using `gspread`.
 
-```
+```python
 scope = [
     "https://spreadsheets.google.com/feeds",
     "https://www.googleapis.com/auth/spreadsheets",
@@ -64,7 +64,7 @@ client = gspread.authorize(creds)
 
 4. Open the sheet of the Google Spread Sheet using the name of the book and the sheet we want. Use Pandas to display the data.
 
-```
+```python
 sheet = client.open("google-sheet-test").sheet1
 # sheet = client.open("google-sheet-test").worksheet(sheet_name)
 
@@ -79,7 +79,7 @@ Instead of the attribute `sheet1` you can also use `worksheet` and give the name
 
 5. If only the row values are needed. The given number is the row position, being the position 1 the headers. For column is very similar. Also, we can even get the value inside of a position in the spread sheet.
 
-```
+```python
 row = sheet.row_values(3)
 
 col = sheet.col_values(3)
@@ -93,7 +93,7 @@ print(cell)
 
 6. If we want to insert, delete or update information to the spread sheet.
 
-```
+```python
 # insert
 insertRow = [5, "Ricardo", "Amarillo"]
 sheet.insert_row(insertRow, 4)
