@@ -4,6 +4,8 @@ This repository could eventually help you to: download, modify and upload data f
 
 ## Resources
 
+The basic code for this example is located in [main.py]()
+
 As an example, we are going to use the following spread sheet from Google Drive: https://docs.google.com/spreadsheets/d/19v5Zlc9FrHV5avziwdAsSBlki_m-xnwohgnwZAJLkoQ/edit?usp=sharing.
 
 ## Steps to connect with Google Drive and Sheets.
@@ -16,7 +18,7 @@ As an example, we are going to use the following spread sheet from Google Drive:
 4. Click on API overview, or on API Services. On the top of the screen, inside the search bar, look for **Google Drive API**, click on it. Click on the Enable button.
 5. We will need to generate credentials for this API, so, click on **Generate Credentials**.
 6. Which API are you using? Select: **Google Drive API**. Where will you be calling the API from? Select: **Web Server**. What data will you be accessing? Select: **Application data**. The last question, Are you planning to use this API with App Engine or Compute Engine? Select: No. Click on the blue button: What credentials do I need?.
-7. In the section this section, Add credentials to your project, generate a **Service account name**. And as a role, select Project Editor. Finally, make sure Key type JSON is selected, and click continue.
+7. In this section: Add credentials to your project, generate a **Service account name**. And as a role, select Project Editor. Finally, make sure Key type JSON is selected, and click continue.
 8. A JSON file is downloaded with our credentials.
 9. Now, we will go back to the project in the Cloud Console and enable another API. Search for **Google Sheets API** and click on the Enable button.
 10. At last, move the json file to the project folder (google-sheet) and change the name of the file to `credentials.json`.
@@ -33,9 +35,7 @@ As an example, we are going to use the following spread sheet from Google Drive:
 
 ```bash
 $ virtualenv -p python3 venv
-
 $ source venv/bin/activate
-
 $ pip install gspread oauth2client pandas
 ```
 
@@ -43,6 +43,7 @@ $ pip install gspread oauth2client pandas
 
 ```python
 import gspread
+
 from oauth2client.service_account import ServiceAccountCredentials
 ```
 
@@ -109,9 +110,8 @@ sheet.update_cell(2,2, "Changed!")
 
 In the file, called `connectGoogleSheet.py`, we can find a class named **ConnectGoogleSheet** with 2 main methods:
 
-1. getAllTable() - Import as a Pandas object all the data in the table from the spread sheet.
-2. updateAllTable(new_table) - Upload all the new table to the spread sheet.
+1. **getAllTable**() - Import as a Pandas object all the data in the table from the spread sheet.
+2. **updateAllTable**(new_table) - Upload all the new table to the spread sheet.
 
-**Warning!** The updateAllTable method will delete all current data in the spread sheet and overwrite all the new information, so it must be used with care.
-
+**Warning!** The **updateAllTable** method will delete all current data in the spread sheet and overwrite all the new information, so it must be used with care.
 
