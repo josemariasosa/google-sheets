@@ -148,3 +148,62 @@ The result must be automatically uploaded to Google Drive, and it should look li
 | 2019-08 | $ 430,000 |      37      |
 | 2019-09 | $ 450,000 |      42      |
 
+The code to solve each point is presented here, and also, it can be seen in the [exercise 1 solution file](https://github.com/josemariasosa/google-sheets/blob/master/exercises/exerc1_solution.py).
+
+1. Print the Total_Orders.
+
+```python
+col = sheet.col_values(2)
+
+print(col)
+```
+
+2. Print the sales and orders only of May 2019.
+
+```python
+row = sheet.row_values(7)
+
+print(row)
+```
+
+3. Print the table of sales as a Pandas DataFrame.
+
+```python
+data = sheet.get_all_records()
+data = pd.DataFrame(data)
+
+print(data)
+```
+
+4. Calculate the **Forecast for September** using the average of the last 3 month (June, July and August).
+
+```python
+forecast_sales = sum(data.loc[5:8, 'Sales'].tolist())/3
+forecast_orders = sum(data.loc[5:8, 'Total_Orders'].tolist())/3
+
+newRow = ['2019-09', forecast_sales, forecast_orders]
+sheet.append_row(newRow)
+
+# Import the sheet again with the new changes.
+sheet = client.open(book_name).worksheet(sheet_name)
+```
+
+5. Calculate the **Average Ticket Price**.
+
+```python
+data = sheet.get_all_records()
+data = pd.DataFrame(data)
+
+data['avg_tix'] = data['Sales'] / data['Total_Orders']
+
+newCol = data['avg_tix'].tolist()
+newCol.insert(0, 'Avg_Tix')
+
+cell_list = sheet.range('D1:D11')
+
+for ix, cell in enumerate(cell_list):
+    cell.value = newCol[ix]
+
+# Update in batch
+sheet.update_cells(cell_list)
+```
